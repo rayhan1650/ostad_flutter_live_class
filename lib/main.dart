@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Hello flutter",
       home: Home(),
     );
@@ -23,37 +23,59 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
-      body: Center(
-        child: Column(
-          children: [
-            const Icon(
-              Icons.android,
-              size: 84,
-              color: Colors.red,
-            ),
-            Image.network(
-              'https://images.unsplash.com/photo-1709707546257-08d69fd42d8b?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-              width: 200,
-            ),
-            Image.asset(
-              'images/bird.jpg',
-              width: 200,
-              height: 200,
-              fit: BoxFit.scaleDown,
-            ),
-            const Text(
-              "Hello, this is a simple flutter code for beginner.",
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              style: TextStyle(
-                overflow: TextOverflow.ellipsis,
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
+      appBar: AppBar(
+        title: const Text(
+          'Home Screen',
+          style: TextStyle(color: Colors.white),
         ),
+        backgroundColor: Colors.blue,
+        leading: const Icon(
+          Icons.home,
+          color: Colors.white,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text('Money has been transfered'),
+                backgroundColor: Colors.green,
+                duration: Duration(seconds: 1),
+              ));
+            },
+            icon: const Icon(
+              Icons.more_vert_outlined,
+              color: Colors.white,
+            ),
+          ),
+          IconButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Send money'),
+                        content: Text('Are you sure?'),
+                        actions: [],
+                      );
+                    });
+              },
+              icon: Icon(Icons.add))
+        ],
+      ),
+      body: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Text('Hello how are you'),
+          Text('world'),
+          Row(
+            children: [
+              Text('Greeting from '),
+              Text('ovi'),
+            ],
+          ),
+        ],
       ),
     );
   }
