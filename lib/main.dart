@@ -92,6 +92,16 @@ class Home extends StatelessWidget {
                 print('pressed');
               },
               child: const Text('Press here'),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.red,
+                textStyle: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              onPressed: () {},
+              child: const Text('Text Button'),
             )
           ],
         ),
