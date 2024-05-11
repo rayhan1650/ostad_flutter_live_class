@@ -102,6 +102,13 @@ class Home extends StatelessWidget {
               ),
               onPressed: () {},
               child: const Text('Text Button'),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.add_circle,
+                color: Colors.red,
+              ),
             )
           ],
         ),
