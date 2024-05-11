@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -108,6 +109,23 @@ class Home extends StatelessWidget {
               icon: const Icon(
                 Icons.add_circle,
                 color: Colors.red,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                print('on tap detected');
+              },
+              onDoubleTap: () {
+                print('on doubletap detected');
+              },
+              child: const Column(
+                children: [
+                  Text('abcd'),
+                  Icon(Icons.add_circle),
+                  Row(
+                    children: [Text('This is a row')],
+                  )
+                ],
               ),
             )
           ],
