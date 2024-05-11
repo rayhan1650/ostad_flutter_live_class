@@ -127,6 +127,26 @@ class Home extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            InkWell(
+              splashColor: Colors.orange,
+              radius: 20,
+              borderRadius: BorderRadius.circular(30),
+              onTap: () {
+                print('on tap detected');
+              },
+              onDoubleTap: () {
+                print('on doubletap detected');
+              },
+              child: const Column(
+                children: [
+                  Text('abcd'),
+                  Icon(Icons.add_circle),
+                  Row(
+                    children: [Text('This is a row')],
+                  )
+                ],
+              ),
             )
           ],
         ),
