@@ -36,8 +36,8 @@ class Home extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text('Money has been transfered'),
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text('Money has been transferred'),
                 backgroundColor: Colors.green,
                 duration: Duration(seconds: 1),
               ));
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) {
-                      return AlertDialog(
+                      return const AlertDialog(
                         title: Text('Send money'),
                         content: Text('Are you sure?'),
                         actions: [],
@@ -62,20 +62,39 @@ class Home extends StatelessWidget {
               icon: Icon(Icons.add))
         ],
       ),
-      body: const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Text('Hello how are you'),
-          Text('world'),
-          Row(
-            children: [
-              Text('Greeting from '),
-              Text('ovi'),
-            ],
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: const BorderSide(
+                    width: 2,
+                    color: Colors.red,
+                  ),
+                ),
+                textStyle: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15,
+                ),
+              ),
+              onPressed: () {
+                print('pressed');
+              },
+              child: const Text('Press here'),
+            )
+          ],
+        ),
       ),
     );
   }
