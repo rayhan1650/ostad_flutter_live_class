@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +59,7 @@ class Home extends StatelessWidget {
                       );
                     });
               },
-              icon: Icon(Icons.add))
+              icon: const Icon(Icons.add))
         ],
       ),
       body: Center(
@@ -146,6 +145,58 @@ class Home extends StatelessWidget {
                     children: [Text('This is a row')],
                   )
                 ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                style: const TextStyle(
+                  fontSize: 24,
+                  color: Colors.green,
+                ),
+                maxLength: 10,
+                decoration: InputDecoration(
+                  hintText: "Enter your email",
+                  hintStyle: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300,
+                  ),
+                  labelText: "Email",
+                  labelStyle: const TextStyle(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(
+                      width: 4,
+                      color: Colors.red,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(
+                      width: 4,
+                      color: Colors.red,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(
+                      width: 4,
+                      color: Colors.green,
+                    ),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    borderSide: const BorderSide(
+                      width: 4,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  fillColor: Colors.white,
+                  filled: true,
+                  prefixIcon: const Icon(Icons.add),
+                  prefixIconColor: Colors.red,
+                  suffixIcon: const Icon(Icons.remove_red_eye),
+                ),
               ),
             )
           ],
