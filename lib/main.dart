@@ -68,11 +68,26 @@ class Home extends StatelessWidget {
       //     Text("Hello Flutter"),
       //   ],
       // ),
-      body: ListView.builder(
-          itemCount: studentName.length,
-          itemBuilder: (context, index) {
-            return Text(studentName[index]);
-          }),
+      // body: ListView.builder(
+      //     itemCount: studentName.length,
+      //     itemBuilder: (context, index) {
+      //       return Text(studentName[index]);
+      //     }),
+      body: ListView.separated(
+        itemCount: studentName.length,
+        itemBuilder: (context, index) {
+          return Text(studentName[index]);
+        },
+        separatorBuilder: (context, index) {
+          return const Divider(
+            height: 20,
+            thickness: 2,
+            indent: 8,
+            endIndent: 16,
+            color: Colors.red,
+          );
+        },
+      ),
     );
   }
 }
