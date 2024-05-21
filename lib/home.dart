@@ -39,8 +39,11 @@ class Home extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Profile()),
-                  );
+                    MaterialPageRoute(
+                        builder: (context) => Profile(userName: "Salam")),
+                  ).then((value) {
+                    print(value);
+                  });
                 },
                 child: const Text("Go to Profile")),
           ],

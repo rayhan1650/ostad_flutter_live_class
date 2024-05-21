@@ -35,8 +35,12 @@ class Settings extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Profile()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Profile(
+                                userName: "Kalam",
+                              )));
                 },
                 child: const Text("Go to Profile")),
           ],
