@@ -73,20 +73,30 @@ class Home extends StatelessWidget {
       //     itemBuilder: (context, index) {
       //       return Text(studentName[index]);
       //     }),
-      body: ListView.separated(
-        itemCount: studentName.length,
-        itemBuilder: (context, index) {
-          return Text(studentName[index]);
-        },
-        separatorBuilder: (context, index) {
-          return const Divider(
-            height: 20,
-            thickness: 2,
-            indent: 8,
-            endIndent: 16,
-            color: Colors.red,
-          );
-        },
+      // body: ListView.separated(
+      //   itemCount: studentName.length,
+      //   itemBuilder: (context, index) {
+      //     return Text(studentName[index]);
+      //   },
+      //   separatorBuilder: (context, index) {
+      //     return const Divider(
+      //       height: 20,
+      //       thickness: 2,
+      //       indent: 8,
+      //       endIndent: 16,
+      //       color: Colors.red,
+      //     );
+      //   },
+      // ),
+      body: GridView(
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        children: const [
+          Text("Hello"),
+          Text("Hello"),
+          Text("Hello"),
+          Text("Hello"),
+        ],
       ),
     );
   }
