@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Hello flutter",
       home: Home(),
@@ -18,49 +18,61 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  List<String> studentName = [
+    "Salam",
+    "Jhon",
+    "Kalam",
+    "Asif",
+    "Hasan",
+  ];
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter Bangladesh"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-          Text("Hello Flutter"),
-        ],
-      ),
+      // body: ListView(
+      //   children: [
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter Bangladesh"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //     Text("Hello Flutter"),
+      //   ],
+      // ),
+      body: ListView.builder(
+          itemCount: studentName.length,
+          itemBuilder: (context, index) {
+            return Text(studentName[index]);
+          }),
     );
   }
 }
