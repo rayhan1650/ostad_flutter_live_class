@@ -101,8 +101,26 @@ class Home extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            ListView.separated(
+              shrinkWrap: true,
+              primary: false,
+              itemCount: studentName.length,
+              itemBuilder: (context, index) {
+                return Text(studentName[index]);
+              },
+              separatorBuilder: (context, index) {
+                return const Divider(
+                  height: 20,
+                  thickness: 2,
+                  indent: 8,
+                  endIndent: 16,
+                  color: Colors.red,
+                );
+              },
+            ),
             GridView.builder(
                 shrinkWrap: true,
+                primary: false,
                 itemCount: 100,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
