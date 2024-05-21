@@ -98,25 +98,32 @@ class Home extends StatelessWidget {
           Text("Hello"),
         ],
       ),*/
-      body: GridView.builder(
-          itemCount: studentName.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3,
-            mainAxisSpacing: 2,
-            crossAxisSpacing: 4,
-          ),
-          itemBuilder: (context, index) {
-            return Container(
-              color: Colors.grey.shade200,
-              child: Column(
-                children: [
-                  Text("Roll - ${index + 1}"),
-                  Text(studentName[index]),
-                ],
-              ),
-            );
-          }),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            GridView.builder(
+                shrinkWrap: true,
+                itemCount: 100,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 3,
+                  mainAxisSpacing: 2,
+                  crossAxisSpacing: 4,
+                ),
+                itemBuilder: (context, index) {
+                  return Container(
+                    color: Colors.grey.shade200,
+                    child: Column(
+                      children: [
+                        Text("Roll - ${index + 1}"),
+                        // Text(studentName[index]),
+                      ],
+                    ),
+                  );
+                }),
+          ],
+        ),
+      ),
     );
   }
 }
